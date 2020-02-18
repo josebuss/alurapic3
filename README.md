@@ -1,2 +1,1 @@
-# alurapic3
- Angular parte 3: upload, build e novos componentes
+# Angular parte 3: upload, build e novos componentes
