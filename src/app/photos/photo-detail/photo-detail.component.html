@@ -1,0 +1,19 @@
+<div class="bg-white border" *ngIf="(photo$ | async) as photo">
+  <div class="row">
+
+    <div class="col-lg-6">
+      <ap-photo [url]="photo?.url" [description]="photo?.description"></ap-photo>
+    </div>
+
+    <div class="col-lg-6 p-4">
+
+      <small>
+        <p class="text-left break-word">{{photo?.description}}</p>
+        <hr>
+      </small>
+
+      <ap-photo-coments [photoId]="photoId"></ap-photo-coments>
+
+    </div>
+  </div>
+</div>
