@@ -3,7 +3,7 @@ export interface Photo {
     postDate: Date;
     url: string;
     description: string
-    allowComents: boolean;
+    allowComments: boolean;
     likes: number;
     comments: number;
     userId: number;

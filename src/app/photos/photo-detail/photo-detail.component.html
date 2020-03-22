@@ -6,14 +6,19 @@
     </div>
 
     <div class="col-lg-6 p-4">
-
       <small>
         <p class="text-left break-word">{{photo?.description}}</p>
+        <div class="text-left mb-4">
+          <i class="fas fa-comment fa-2x mr-2 ml-2"></i>{{ photo.comments }}
+          <i (click)="remove()" class="fas fa-trash fa-2x pull-right"></i>
+        </div>
         <hr>
       </small>
 
-      <ap-photo-coments [photoId]="photoId"></ap-photo-coments>
-
+      <ap-photo-coments *ngIf="photo?.allowComments; else warnning" [photoId]="photoId"></ap-photo-coments>
+      <ng-template #warnning>
+        <p>User has disabled comments for this photo</p>
+      </ng-template>
     </div>
   </div>
 </div>

@@ -33,13 +33,14 @@ export class PhotoComentsComponent implements OnInit {
   }
 
   save() {
-    this.comments$ = this.photoService
-      .addComments(this.photoId, this.commentForm.get('comment').value)
-      .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
-      .pipe(tap(() => {
-        this.commentForm.reset();
-        alert("Comentário adicionado com sucesso!");
-      }));
+    this.comments$ =
+      this.photoService
+        .addComments(this.photoId, this.commentForm.get('comment').value)
+        .pipe(switchMap(() => this.photoService.getComments(this.photoId)))
+        .pipe(tap(() => {
+          alert("Comentário adicionado com sucesso!");
+          this.commentForm.reset();
+        }));
   }
 
 }
